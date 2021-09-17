@@ -1,645 +1,227 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-  <head>
-  <meta charset="UTF-8">
-  <meta 
-    name="viewport"
-    content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-  <meta 
-    http-equiv="X-UA-Compatible" 
-    content="ie=edge">
-  <meta 
-    name="theme-color" 
-    content="#fff" 
-    id="theme-color">
-  <meta 
-    name="description" 
-    content="liangzui&#39;s blog">
-  <link 
-    rel="icon" 
-    href="https://www.liangzui.top/img/icon.png">
-  <title>liangzui's blog</title>
-  
-    
-      <meta 
-        property="og:title" 
-        content="liangzui&#39;s blog">
-    
-    
-      <meta 
-        property="og:url" 
-        content="http://example.com/index.html">
-    
-    
-      <meta 
-        property="og:img" 
-        content="https://www.liangzui.top/img/icon.png">
-    
-    
-    
-  
-  <script>
-    function loadScript(url, cb) {
-      var script = document.createElement('script');
-      script.src = url;
-      if (cb) script.onload = cb;
-      script.async = true;
-      document.body.appendChild(script);
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>欢迎来到我的小站</title><meta name="author" content="Liang Zui"><meta name="copyright" content="Liang Zui"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="爱生活，爱编程">
+<meta property="og:type" content="website">
+<meta property="og:title" content="欢迎来到我的小站">
+<meta property="og:url" content="https://github.com/Alison-yc/Alison-yc.github.io/index.html">
+<meta property="og:site_name" content="欢迎来到我的小站">
+<meta property="og:description" content="爱生活，爱编程">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.liangzui.top/img/icon.png">
+<meta property="article:author" content="Liang Zui">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.liangzui.top/img/icon.png"><link rel="shortcut icon" href="/Alison-yc/Alison-yc.github.io/img/favicon.png"><link rel="canonical" href="https://github.com/Alison-yc/Alison-yc.github.io/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/Alison-yc/Alison-yc.github.io/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/Alison-yc/Alison-yc.github.io/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
     }
-    function loadCSS(href, data, attr) {
-      var sheet = document.createElement('link');
-      sheet.ref = 'stylesheet';
-      sheet.href = href;
-      sheet.dataset[data] = attr;
-      document.head.appendChild(sheet);
-    }
-    function changeCSS(cssFile, data, attr) {
-      var oldlink = document.querySelector(data);
-      var newlink = document.createElement("link");
-      newlink.setAttribute("rel", "stylesheet");
-      newlink.setAttribute("href", cssFile);
-      newlink.dataset.prism = attr;
-      document.head.replaceChild(newlink, oldlink);
-    }
-  </script>
-  
-    
-  
-  <script>
-    // control reverse button
-    var reverseDarkList = {
-      dark: 'light',
-      light: 'dark'
-    };
-    var themeColor = {
-      dark: '#1c1c1e',
-      light: '#fff'
-    }
-    // get the data of css prefers-color-scheme
-    var getCssMediaQuery = function() {
-      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    };
-    // reverse current darkmode setting function
-    var reverseDarkModeSetting = function() {
-      var setting = localStorage.getItem('user-color-scheme');
-      if(reverseDarkList[setting]) {
-        setting = reverseDarkList[setting];
-      } else if(setting === null) {
-        setting = reverseDarkList[getCssMediaQuery()];
-      } else {
-        return;
-      }
-      localStorage.setItem('user-color-scheme', setting);
-      return setting;
-    };
-    // apply current darkmode setting
-  </script>
-  
-    <script>
-      var setDarkmode = function(mode) {
-      var setting = mode || localStorage.getItem('user-color-scheme');
-      if(setting === getCssMediaQuery()) {
-        document.documentElement.removeAttribute('data-user-color-scheme');
-        localStorage.removeItem('user-color-scheme');
-        document.getElementById('theme-color').content = themeColor[setting];
-        document.getElementById('theme-color').dataset.mode = setting;
-      } else if(reverseDarkList[setting]) {
-        document.documentElement.setAttribute('data-user-color-scheme', setting);
-        document.getElementById('theme-color').content = themeColor[setting];
-        document.getElementById('theme-color').dataset.mode = setting;
-      } else {
-        document.documentElement.removeAttribute('data-user-color-scheme');
-        localStorage.removeItem('user-color-scheme');
-        document.getElementById('theme-color').content = themeColor[getCssMediaQuery()];
-        document.getElementById('theme-color').dataset.mode = getCssMediaQuery();
-      }
-    };
-    setDarkmode();
-    </script>
-  
-  
-  <link rel="preload" href="//at.alicdn.com/t/font_1946621_i1kgafibvw.css" as="style" >
-  <link rel="preload" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css" as="style" >
-  
-  
-    <link rel="preload" href="/js/lib/lightbox/baguetteBox.min.js" as="script">
-    <link rel="preload" href="/js/lib/lightbox/baguetteBox.min.css" as="style" >
-  
-  
-    <link rel="preload" href="/js/lib/lozad.min.js" as="script">
-  
-  
-  
-  
-  
-  
-  
-  <link rel="stylesheet" href="/css/main.css">
-  
-  <link rel="stylesheet" href="//at.alicdn.com/t/font_1946621_i1kgafibvw.css">
-  
-  <link rel="stylesheet" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css">
-  
-<meta name="generator" content="Hexo 5.4.0"></head>
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '欢迎来到我的小站',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2021-09-17 23:05:50'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
 
-  <body>
-    <div class="wrapper">
-       
-      <nav class="navbar">
-  <div class="navbar-logo">
-    <span class="navbar-logo-main">
-      
-        <img 
-          class="navbar-logo-img"
-          width="32"
-          height="32"
-          src="https://www.liangzui.top/img/icon.png" 
-          alt="blog logo">
-      
-      <span class="navbar-logo-dsc">liangzui's blog</span>
-    </span>
-  </div>
-  <div class="navbar-menu">
-    
-      <a 
-        href="/" 
-        class="navbar-menu-item">
-        
-          首页
-        
-      </a>
-    
-      <a 
-        href="/archive" 
-        class="navbar-menu-item">
-        
-          归档
-        
-      </a>
-    
-      <a 
-        href="/tags" 
-        class="navbar-menu-item">
-        
-          标签
-        
-      </a>
-    
-      <a 
-        href="/categories" 
-        class="navbar-menu-item">
-        
-          分类
-        
-      </a>
-    
-      <a 
-        href="/about" 
-        class="navbar-menu-item">
-        
-          关于
-        
-      </a>
-    
-      <a 
-        href="/friend" 
-        class="navbar-menu-item">
-        
-          友链
-        
-      </a>
-    
-    <a 
-      class="navbar-menu-item darknavbar" 
-      id="dark">
-      <i class="iconfont icon-weather"></i>
-    </a>
-    <a 
-      class="navbar-menu-item searchnavbar" 
-      id="search">
-      <i 
-        class="iconfont icon-search" 
-        style="font-size: 1.2rem; font-weight: 400;">
-      </i>
-    </a>
-  </div>
-</nav> 
-      
-      <div 
-        id="local-search" 
-        style="display: none">
-        <input
-          class="navbar-menu-item"
-          id="search-input"
-          placeholder="请输入搜索内容..." />
-        <div id="search-content"></div>
-      </div>
-      
-      <div class="section-wrap">
-        <div class="container">
-          <div class="columns">
-            <main class="main-column">
-  <div class="card">
-    
-    <article class="card card-content">
-      <a href="/2021/08/02/%E9%97%AD%E5%8C%85/">
-        <h1 class="post-title">
-          闭包
-        </h1>
-      </a>
-      <div class="card-excerpt">
-        
-          来源
-在通过《JavaScript高级程序设计
-        
-      </div>
-      <div class="card-post-footer">
-        <div class="post-meta">
-          <time datetime="2021-08-02T07:34:23.000Z">
-            <i 
-              class="iconfont icon-calendar" 
-              style="margin-right: 2px;">
-            </i>
-            <span>2021-08-02</span>
-          </time>
-          
-            
-            
-              
-            
-            <span class="dot"></span>
-            
-              
-              <a 
-                href="/categories/JavaScript/" 
-                class="post-meta-link">
-                JavaScript
-              </a>
-            
-          
-        </div>
-        <a href="/2021/08/02/%E9%97%AD%E5%8C%85/">继续阅读 </a>
-      </div>
-    </article>
-  </div>
-
-  <div class="card">
-    
-    <article class="card card-content">
-      <a href="/2021/07/26/hexo/">
-        <h1 class="post-title">
-          使用hexo快速搭建简易博客
-        </h1>
-      </a>
-      <div class="card-excerpt">
-        
-          初衷
-在互联网发达的今天，作为即将成为一名程序员的我，希望拥有一个归自己所...
-        
-      </div>
-      <div class="card-post-footer">
-        <div class="post-meta">
-          <time datetime="2021-07-26T11:14:00.000Z">
-            <i 
-              class="iconfont icon-calendar" 
-              style="margin-right: 2px;">
-            </i>
-            <span>2021-07-26</span>
-          </time>
-          
-            
-            
-              
-            
-            <span class="dot"></span>
-            
-              
-              <a 
-                href="/categories/Web/" 
-                class="post-meta-link">
-                Web
-              </a>
-            
-          
-        </div>
-        <a href="/2021/07/26/hexo/">继续阅读 </a>
-      </div>
-    </article>
-  </div>
-
-</main>
-            <aside class="left-column">
-              
-              <div class="card card-author">
-                
-  <img 
-    src="https://www.liangzui.top/img/icon.png" 
-    class="author-img"
-    width="88"
-    height="88"
-    alt="author avatar">
-
-<p class="author-name">liangzui</p>
-<p class="author-description">爱生活，爱编程</p>
-<div class="author-message">
-  <a 
-    class="author-posts-count" 
-    href="/archives">
-    <span>2</span>
-    <span>文章</span>
-  </a>
-  <a 
-    class="author-categories-count" 
-    href="/categories">
-    <span>2</span>
-    <span>分类</span>
-  </a>
-  <a 
-    class="author-tags-count" 
-    href="/tags">
-    <span>2</span>
-    <span>标签</span>
-  </a>
-</div>
-
-              </div>
-               <div class="sticky-tablet">
-  
-  
-  
-  <article class="card card-content categories-widget">
-    <div class="categories-card">
-  <div class="categories-header">
-    <i 
-      class="iconfont icon-fenlei" 
-      style="padding-right: 2px;">
-    </i>分类
-  </div>
-  <div class="categories-list">
-    
-      <a href="/categories/Web/">
-        <div class="categories-list-item">
-          Web
-          <span class="categories-list-item-badge">1</span>
-        </div>
-      </a>
-    
-      <a href="/categories/JavaScript/">
-        <div class="categories-list-item">
-          JavaScript
-          <span class="categories-list-item-badge">1</span>
-        </div>
-      </a>
-    
-  </div>
-</div>
-  </article>
-  
-  <article class="card card-content tags-widget">
-    <div class="tags-card">
-  <div class="tags-header">
-    <i 
-      class="iconfont icon-biaoqian" 
-      style="padding-right: 2px;">
-    </i>热门标签
-  </div>
-  <div class="tags-list">
-    
-      <a 
-        href="/tags/Closure/" 
-        title="Closure">
-        <div class="tags-list-item">Closure</div>
-      </a>
-    
-      <a 
-        href="/tags/blog/" 
-        title="blog">
-        <div class="tags-list-item">blog</div>
-      </a>
-    
-  </div>
-</div>
-  </article>
-  
-  
-    <article class="card card-content widescreen-archive archive-widget">
-      <div class="archive-card">
-  <div class="archive-card-header">
-    <i 
-      class="iconfont icon-wodebaobiao" 
-      style="padding-right: 2px;">
-    </i>归档
-  </div>
-  <div class="archive-card-list">
-    
-    
-    
-      
-        
-        
-        
-      
-    
-      
-        
-      
-    
-    
-      <a 
-        href="/archives/2021" 
-        class="archive-card-list-item">
-        2021
-        <span class="archive-card-list-item-badge">2</span>
-      </a>
-    
-  </div>
-</div>
-    </article>
-  
-</div>
-            </aside>
-            <aside class="right-column">
-              <div class="sticky-widescreen">
-  
-  
-  
-  <article class="card card-content">
-    <div class="recent-posts-card">
-  <div class="recent-posts-header">
-    <i 
-      class="iconfont icon-wenzhang_huaban" 
-      style="padding-right: 2px;">
-    </i>最近文章
-  </div>
-  <div class="recent-posts-list">
-    
-      <div class="recent-posts-item">
-        <div class="recent-posts-item-title">2021-08-02</div>
-        <a href="/2021/08/02/%E9%97%AD%E5%8C%85/"><div class="recent-posts-item-content">闭包</div></a>
-      </div>
-    
-      <div class="recent-posts-item">
-        <div class="recent-posts-item-title">2021-07-26</div>
-        <a href="/2021/07/26/hexo/"><div class="recent-posts-item-content">使用hexo快速搭建简易博客</div></a>
-      </div>
-    
-  </div>
-</div>
-  </article>
-  
-  
-    <article class="card card-content">
-      <div class="archive-card">
-  <div class="archive-card-header">
-    <i 
-      class="iconfont icon-wodebaobiao" 
-      style="padding-right: 2px;">
-    </i>归档
-  </div>
-  <div class="archive-card-list">
-    
-    
-    
-      
-        
-        
-        
-      
-    
-      
-        
-      
-    
-    
-      <a 
-        href="/archives/2021" 
-        class="archive-card-list-item">
-        2021
-        <span class="archive-card-list-item-badge">2</span>
-      </a>
-    
-  </div>
-</div>
-    </article>
-  
-</div>
-            </aside>
-          </div>
-        </div>
-      </div>
-    </div>
-     
-    <footer class="footer">
-  <div class="footer-container">
-    <div>
-      <div class="footer-dsc">
-        <span>
-          Copyright ©
-          
-          2021
-        </span>
-        &nbsp;
-        <a 
-          href="/" 
-          class="footer-link">
-          liangzui's blog
-        </a>
-      </div>
-    </div>
-
-    
-      <div class="footer-dsc">
-        
-          Powered by
-          <a 
-            href="https://hexo.io/" 
-            class="footer-link" 
-            target="_blank" 
-            rel="nofollow noopener noreferrer">
-            &nbsp;Hexo
-          </a>
-        
-        
-          <span>&nbsp;|&nbsp;</span>
-        
-        
-          Theme -
-          <a 
-            href="https://github.com/theme-kaze" 
-            class="footer-link" 
-            target="_blank"
-            rel="nofollow noopener noreferrer">
-            &nbsp;Kaze
-          </a>
-        
-      </div>
-    
-    
-    
-    
-</footer> 
-    
-  <a 
-    role="button" 
-    id="scrollbutton" 
-    class="basebutton" 
-    aria-label="回到顶部">
-    <i class="iconfont icon-arrowleft button-icon"></i>
-  </a>
-
-<a 
-  role="button" 
-  id="menubutton"
-  aria-label="menu button"
-  class="basebutton">
-  <i class="iconfont icon-menu button-icon"></i>
-</a>
-<a 
-  role="button" 
-  id="popbutton" 
-  class="basebutton" 
-  aria-label="控制中心">
-  <i class="iconfont icon-expand button-icon"></i>
-</a>
-<a 
-  role="button" 
-  id="darkbutton" 
-  class="basebutton darkwidget" 
-  aria-label="夜色模式">
-  <i class="iconfont icon-weather button-icon"></i>
-</a>
-<a 
-  role="button" 
-  id="searchbutton" 
-  class="basebutton searchwidget" 
-  aria-label="搜索">
-  <i class="iconfont icon-search button-icon"></i>
-</a> 
-     
-     
-     
-     
-    <script src="/js/main.js"></script> 
-     
-    
-      <script>
-        var addLazyload = function () {
-          var observer = lozad('.lozad', {
-            load: function (el) {
-              el.srcset = el.getAttribute('data-src')
-            },
-            loaded: function (el) {
-              el.classList.add('loaded')
-            },
-          })
-          observer.observe()
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
         }
-      </script>
-      <script>
-        loadScript('/js/lib/lozad.min.js', addLazyload)
-      </script>
-     
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
     
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
     
-  </body>
-</html>
+    const fontSizeVal = saveToLocal.get('global-font-size')
+    if (fontSizeVal !== undefined) {
+      document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+    }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://www.liangzui.top/img/icon.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/Alison-yc/Alison-yc.github.io/archives/"><div class="headline">文章</div><div class="length-num">2</div></a></div><div class="data-item"><a href="/Alison-yc/Alison-yc.github.io/tags/"><div class="headline">标签</div><div class="length-num">2</div></a></div><div class="data-item"><a href="/Alison-yc/Alison-yc.github.io/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/Alison-yc/Alison-yc.github.io/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/Alison-yc/Alison-yc.github.io/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/Alison-yc/Alison-yc.github.io/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/Alison-yc/Alison-yc.github.io/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/Alison-yc/Alison-yc.github.io/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/Alison-yc/Alison-yc.github.io/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('https://images5.alphacoders.com/116/1168328.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/Alison-yc/Alison-yc.github.io/">欢迎来到我的小站</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/Alison-yc/Alison-yc.github.io/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/Alison-yc/Alison-yc.github.io/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/Alison-yc/Alison-yc.github.io/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/Alison-yc/Alison-yc.github.io/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/Alison-yc/Alison-yc.github.io/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/Alison-yc/Alison-yc.github.io/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">欢迎来到我的小站</h1><div id="site-subtitle"><span id="subtitle"></span></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/Alison-yc/Alison-yc.github.io/2021/08/02/%E9%97%AD%E5%8C%85/" title="闭包">     <img class="post_bg" src="https://images2.alphacoders.com/722/72270.jpg" onerror="this.onerror=null;this.src='/Alison-yc/Alison-yc.github.io/img/404.jpg'" alt="闭包"></a></div><div class="recent-post-info"><a class="article-title" href="/Alison-yc/Alison-yc.github.io/2021/08/02/%E9%97%AD%E5%8C%85/" title="闭包">闭包</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-08-01T16:00:00.000Z" title="发表于 2021-08-02 00:00:00">2021-08-02</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/Alison-yc/Alison-yc.github.io/categories/web/">web</a></span></div><div class="content">来源
+在通过《JavaScript高级程序设计》对于闭包的学习后，让我本就比较模糊的概念更加混乱，因此通过网络上查阅MDN、阮一峰关于闭包解释的日志之后，找到了最简单易懂的解释，并在此记录下来。
+
+闭包闭包（closure）是Javascript语言的一个难点，也是它的特色，很多高级应用都要依靠闭包实现。
+变量的作用域
+想要理解闭包，就要先理解Javascript特殊的变量作用域。变量的作用域无非就是两种：全局变量和局部变量。在Javascript语言中，函数当中可以直接取到全局变量。
+
+12345671   var n=1;23   function fn1()&#123;4       alert(n);5   &#125;67   fn1(); // 1
+而函数外部是无法读取到函数内的局部变量。
+123451   function fn1()&#123;2       var n=2;3   &#125;45   alert(n); // error
+
+这此需要注意，函数内部声明变量的时候，一定要使用var命令。如果不用的话则是声明了一个全局变量！(ES6新语法中let声明的是没 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/Alison-yc/Alison-yc.github.io/2021/07/26/hexo/" title="通过使用Hexo快速搭建简易博客">     <img class="post_bg" src="https://images.alphacoders.com/116/1169862.jpg" onerror="this.onerror=null;this.src='/Alison-yc/Alison-yc.github.io/img/404.jpg'" alt="通过使用Hexo快速搭建简易博客"></a></div><div class="recent-post-info"><a class="article-title" href="/Alison-yc/Alison-yc.github.io/2021/07/26/hexo/" title="通过使用Hexo快速搭建简易博客">通过使用Hexo快速搭建简易博客</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-07-25T16:00:00.000Z" title="发表于 2021-07-26 00:00:00">2021-07-26</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/Alison-yc/Alison-yc.github.io/categories/%E5%B7%A5%E5%85%B7/">工具</a></span></div><div class="content">初衷
+在互联网发达的今天，作为即将成为一名程序员的我，希望拥有一个归自己所有、掌控的个人博客，无论是记录生活，还是分享技术，自定义博客都可以按照自己的要求，为自己提供熨帖的服务，而不必受到条条框框的限制。这篇文章的目的就是想要总结这几天来我学习通过Hexo + Github来搭建出我的个人博客，其实还有很多的不完美，之后会在优化我的博客时，对本文进行完善。
+
+安装Hexo 的安装和使用都非常便捷。但是，你的计算机环境中必须有这两个东西：
+
+Node.jsGit其中 Node.js 是 Hexo 的构建引擎，Git 是版本控制工具。
+
+安装Node.js在Node.js官网可以直接下载安装包,根据[Hexo]https://hexo.io/zh-cn/)的官方文档推荐Node.js 版本需不低于 10.13，建议使用 Node.js 12.0 及以上版本，确保可以使用Hexo的全部功能可用。官方给出版本限制：
+
+
+
+Hexo版本
+最低兼容 Node.js 版本
+
+
+
+5.0
+10.13.0
+
+
+4.1 - 4.2
+8.10
+
+
+4.0
+8.6
+
+
+3.3 - 3.9
+6.9
+
+
+3.2  ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://www.liangzui.top/img/icon.png" onerror="this.onerror=null;this.src='/Alison-yc/Alison-yc.github.io/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Liang Zui</div><div class="author-info__description">爱生活，爱编程</div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/Alison-yc/Alison-yc.github.io/archives/"><div class="headline">文章</div><div class="length-num">2</div></a></div><div class="card-info-data-item"><a href="/Alison-yc/Alison-yc.github.io/tags/"><div class="headline">标签</div><div class="length-num">2</div></a></div><div class="card-info-data-item"><a href="/Alison-yc/Alison-yc.github.io/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div></div><a class="button--animated" id="card-info-btn" href="https://github.com/Alison-yc"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/Alison-yc/Alison-yc.github.io/2021/08/02/%E9%97%AD%E5%8C%85/" title="闭包"><img src="https://images2.alphacoders.com/722/72270.jpg" onerror="this.onerror=null;this.src='/Alison-yc/Alison-yc.github.io/img/404.jpg'" alt="闭包"/></a><div class="content"><a class="title" href="/Alison-yc/Alison-yc.github.io/2021/08/02/%E9%97%AD%E5%8C%85/" title="闭包">闭包</a><time datetime="2021-08-01T16:00:00.000Z" title="发表于 2021-08-02 00:00:00">2021-08-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Alison-yc/Alison-yc.github.io/2021/07/26/hexo/" title="通过使用Hexo快速搭建简易博客"><img src="https://images.alphacoders.com/116/1169862.jpg" onerror="this.onerror=null;this.src='/Alison-yc/Alison-yc.github.io/img/404.jpg'" alt="通过使用Hexo快速搭建简易博客"/></a><div class="content"><a class="title" href="/Alison-yc/Alison-yc.github.io/2021/07/26/hexo/" title="通过使用Hexo快速搭建简易博客">通过使用Hexo快速搭建简易博客</a><time datetime="2021-07-25T16:00:00.000Z" title="发表于 2021-07-26 00:00:00">2021-07-26</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/Alison-yc/Alison-yc.github.io/categories/web/"><span class="card-category-list-name">web</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/Alison-yc/Alison-yc.github.io/categories/%E5%B7%A5%E5%85%B7/"><span class="card-category-list-name">工具</span><span class="card-category-list-count">1</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/Alison-yc/Alison-yc.github.io/tags/JavaScript/" style="font-size: 1.1em; color: #999">JavaScript</a> <a href="/Alison-yc/Alison-yc.github.io/tags/hexo/" style="font-size: 1.1em; color: #999">hexo</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/Alison-yc/Alison-yc.github.io/archives/2021/08/"><span class="card-archive-list-date">八月 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/Alison-yc/Alison-yc.github.io/archives/2021/07/"><span class="card-archive-list-date">七月 2021</span><span class="card-archive-list-count">1</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">2</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2021-09-17T15:05:50.499Z"></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By Liang Zui</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="font-plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/Alison-yc/Alison-yc.github.io/js/utils.js"></script><script src="/Alison-yc/Alison-yc.github.io/js/main.js"></script><script src="/Alison-yc/Alison-yc.github.io/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"><script>function subtitleType () {
+  fetch('https://api.btstu.cn/yan/api.php?charset=utf-8&encode=json')
+    .then(response => response.json())
+    .then(data => {
+      if (true) {
+        const sub = []
+        sub.unshift(data.text)
+        window.typed = new Typed('#subtitle', {
+          strings: sub,
+          startDelay: 300,
+          typeSpeed: 150,
+          loop: true,
+          backSpeed: 50,
+        })
+      } else {
+        document.getElementById('subtitle').innerHTML = data.text
+      }
+    })
+}
+
+if (true) {
+  if (typeof Typed === 'function') {
+    subtitleType()
+  } else {
+    getScript('https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js').then(subtitleType)
+  }
+} else {
+  subtitleType()
+}
+</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/fireworks.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
